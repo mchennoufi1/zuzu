@@ -7,6 +7,7 @@
             include_once('includes/head.php');
             include_once ('includes/header.php');
             ?>
+            <br>
             <h4>Sushirestaurant Zuzu</h4>
             <p>
                 Wij zijn Sushirestaurant Zuzu. Een restaurant die heerlijke sushi verkoopt voor een redelijke prijs.
