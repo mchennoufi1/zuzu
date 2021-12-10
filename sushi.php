@@ -3,14 +3,12 @@
     <body>
         <div class="container">
         <?php
-            $db = new PDO("mysql:host=localhost;dbname=zuzu"
-            ,"root"); 
             $page = "sushi";
             include_once('includes/header.php');
             include_once('includes/head.php');
         ?>
         <br>
-        <form method="post" action="">
+        <form method="post" action="sushi.php">
             <label>Voornaam: </label>
             <input type="text" name="fnaam">
             <br>
@@ -29,6 +27,8 @@
             <input type="submit" name="verzenden" value="Opslaan">
         </form>
         <?php
+        $db = new PDO("mysql:host=localhost;dbname=zuzu"
+        ,"root"); 
             if(isset($_POST['verzenden'])){
                 $fnaam = $_POST['fnaam'];
                 $lnaam = $_POST['lnaam'];
