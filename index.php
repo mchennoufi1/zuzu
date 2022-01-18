@@ -8,6 +8,8 @@
             include_once ('includes/header.php');
             ?>
             <br>
+            <span class="card header"><img src="img/sushiwallpaper.jpeg" alt="code" 
+            width="100%" height="200px"style="object-fit: cover;"></span>
             <h4>Sushirestaurant Zuzu</h4>
             <p>
                 Wij zijn Sushirestaurant Zuzu. Een restaurant die heerlijke sushi verkoopt voor een redelijke prijs.
