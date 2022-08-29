@@ -1,12 +1,16 @@
 body {
-    background-color: rgb(228, 147, 147);
     text-align: center;
+    box-sizing: border-box;
 }
 
-.container {
-    background-color: white;
+.navbar {
+    margin-bottom: 0;
+    background-color: darkslategray;
+    color: white;
 }
-
+.navbar a{
+    color: white;
+}
 .pull-right img-thumbnail {
     margin-top: -10px;
     margin-bottom: 10px;
@@ -16,7 +20,23 @@ body {
     margin-top: 20px;
 }
 
+.beginstuk{
+    margin: auto;
+    width: 90%;
+    width: 450px;
+}
+.card{
+    display: block;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px 0 rgba(32, 32, 32, 0.2),
+    0 5px 15px 0 rgba(30, 30, 30, 0.19);
 
-.navbar {
-    margin-bottom: 0;
+}
+.row{
+    margin: auto;
+    width: 80%;
+}
+footer{
+    background-color: darkslategray;
+    color: white;
 }

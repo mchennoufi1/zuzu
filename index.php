@@ -1,7 +1,7 @@
 <!DOCTYPE html>
     <html>
     <body>
-    <div class="container">
+
             <?php
             $page = "home";
             include_once('includes/head.php');
@@ -9,16 +9,44 @@
             ?>
             <br>
             <span class="card header"><img src="img/sushiwallpaper.jpeg" alt="code" 
-            width="100%" height="200px"style="object-fit: cover;"></span>
-            <h4>Sushirestaurant Zuzu</h4>
+            width="100%" height="200px" style="object-fit: cover;"></span>
+            <div class="beginstuk">
+            <h4>Welkom bij Zuzu</h4>
             <p>
-                Wij zijn Sushirestaurant Zuzu. Een restaurant die heerlijke sushi verkoopt voor een redelijke prijs.
-                 Ons assortiment is te vinden in onze <a href="sushi.php">sushi<a> pagina, waar u verschillende soorten sushi kunt kopen.
+                Wij zijn gespecialieerd in de Japanse keuken. Het woord sushi is afkomstig van "su", wat azijn betekend
+                , en "shi" -- rijst.
             </p>
+                <p class="fw-bold">
+                    Vandaag dinsdag 23 augustus 2022
+                </p>
+                <p class="fw-bold">
+                    Bezorgtijd vanaf nu: 18:00
+                </p>
+            </div>
+            <div class="row">
+            <div class="card col-md-6">
+                <div class="card-body">
+                    <img src="img/sushi.jpeg" alt="code"
+                         width="100%" height="200px" style="object-fit: cover;">
+                </div>
+                <div class="card-footer">
+                    Bestel bij ons je sushi's
+                </div>
+            </div>
+            <div class="card col-md-6">
+                <div class="card-body">
+                    <img src="img/sushi2.jpg" alt="code"
+                         width="100%" height="200px" style="object-fit: cover;">
+                </div>
+                <div class="card-footer">
+                    Keuze uit verschillende soorten sushi's
+                </div>
+            </div>
+            </div>
             <hr>
             <?php
                 include_once ('includes/footer.php');
             ?>
-        </div>
+
     </body>
 </html>
