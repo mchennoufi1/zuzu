@@ -7,9 +7,7 @@
             include_once('includes/head.php');
             include_once ('includes/header.php');
             ?>
-            <br>
-            <span class="card header"><img src="img/sushiwallpaper.jpeg" alt="code" 
-            width="100%" height="200px" style="object-fit: cover;"></span>
+
             <div class="beginstuk">
             <h4>Welkom bij Zuzu</h4>
             <p>
@@ -43,7 +41,7 @@
                 </div>
             </div>
             </div>
-            <hr>
+            <br>
             <?php
                 include_once ('includes/footer.php');
             ?>

@@ -8,23 +8,27 @@
             include_once('includes/head.php');
         ?>
         <br>
-        <form method="post" action="sushi.php">
-            <label>Voornaam: </label>
+        <form class="klant" method="post" action="">
+            <h3>Sushi's bestellen</h3>
+            <label>Maki komkommer (max = 5)</label><br>
             <input type="text" name="fnaam">
             <br>
-            <label>Achternaam: </label>
+            <label>Maki avocado (max = 10)</label><br>
             <input type="text" name="lnaam">
             <br>
-            <label>Adres: </label>
+            <label>Nigira zalm (max = 10)</label><br>
             <input type="text" name="address">
             <br>
-            <label>Stad: </label>
+            <label>Philadelphia Roll (max = 5)</label><br>
             <input type="text" name="city">
             <br>
-            <label>Postcode: </label>
+            <label>Spicy Tuna Roll (max = 5)</label><br>
             <input type="text" name="zipcode">
-            <br><br>
-            <input type="submit" name="verzenden" value="Opslaan">
+            <br>
+            <label>California Roll (max = 8)</label><br>
+            <input type="text" name="zipcode">
+            <br>
+            <btn><input type="submit" name="verzenden" value="Verzenden"></btn>
         </form>
         <?php
         $db = new PDO("mysql:host=localhost;dbname=zuzu"

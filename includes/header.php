@@ -14,6 +14,9 @@
                     <a class="nav-link" style="<?php if($page == 'home'){echo "color: lightgrey";}?>" href="index.php">Home</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" style="<?php if($page == 'home'){echo "color: lightgrey";}?>" href="klant.php">Klantgegevens</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" style="<?php if($page == "sushi"){echo "color: lightgrey";}?>" href="sushi.php">Sushi</a>
                 </li>
                 <li class="nav-item">
@@ -23,3 +26,5 @@
         </div>
     </div>
 </nav>
+<span class=""><img src="img/sushi-banner.jpg" alt="code"
+width="100%" height="200px" style="object-fit: cover;"></span>
