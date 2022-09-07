@@ -3,11 +3,12 @@
 <body>
 
     <?php
-    $page = "home";
+    $page = "klant";
     include_once('includes/head.php');
     include_once ('includes/header.php');
     ?>
     <div class="container">
+        <br>
         <form class="klant" method="post" action="">
             <h3>Klantgegevens</h3>
             <label>Voornaam: </label><br>

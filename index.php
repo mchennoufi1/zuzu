@@ -7,7 +7,7 @@
             include_once('includes/head.php');
             include_once ('includes/header.php');
             ?>
-
+            <br><br>
             <div class="beginstuk">
             <h4>Welkom bij Zuzu</h4>
             <p>

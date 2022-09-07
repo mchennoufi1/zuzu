@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
     <body>
-        <div class="container">
         <?php
             $page = "sushi";
             include_once('includes/header.php');
             include_once('includes/head.php');
         ?>
-        <br>
+        <br><br>
         <form class="klant" method="post" action="">
             <h3>Sushi's bestellen</h3>
             <label>Maki komkommer (max = 5)</label><br>
@@ -55,10 +54,10 @@
             }
             
             ?>
-            <hr>
+        <br>
             <?php
                 include_once('includes/footer.php');
             ?>
-        </div>
+
     </body>
 </html>

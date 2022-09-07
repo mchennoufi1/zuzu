@@ -11,16 +11,16 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" style="<?php if($page == 'home'){echo "color: lightgrey";}?>" href="index.php">Home</a>
+                    <a class="nav-link" style="<?php if($page == 'home'){echo "color: grey";}?>" href="index.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="<?php if($page == 'home'){echo "color: lightgrey";}?>" href="klant.php">Klantgegevens</a>
+                    <a class="nav-link" style="<?php if($page == 'klant'){echo "color: grey";}?>" href="klant.php">Klantgegevens</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="<?php if($page == "sushi"){echo "color: lightgrey";}?>" href="sushi.php">Sushi</a>
+                    <a class="nav-link" style="<?php if($page == "sushi"){echo "color: grey";}?>" href="sushi.php">Sushi</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="<?php if($page == 'contact'){echo "color: lightgrey";}?>" href="contact.php">Contact</a>
+                    <a class="nav-link" style="<?php if($page == 'overzicht'){echo "color: grey";}?>" href="contact.php">Contact</a>
                 </li>
             </ul>
         </div>
