@@ -22,7 +22,9 @@
                 </p>
             </div>
             <div class="row">
+
             <div class="card col-md-6">
+                <a href="klant.php">
                 <div class="card-body">
                     <img src="img/sushi.jpeg" alt="code"
                          width="100%" height="200px" style="object-fit: cover;">
@@ -30,8 +32,10 @@
                 <div class="card-footer">
                     Bestel bij ons je sushi's
                 </div>
+                </a>
             </div>
             <div class="card col-md-6">
+                <a href="sushi.php">
                 <div class="card-body">
                     <img src="img/sushi2.jpg" alt="code"
                          width="100%" height="200px" style="object-fit: cover;">
@@ -39,6 +43,7 @@
                 <div class="card-footer">
                     Keuze uit verschillende soorten sushi's
                 </div>
+                </a>
             </div>
             </div>
             <br>

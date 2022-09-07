@@ -56,6 +56,9 @@ body {
     background-color: black;
     color: white;
 }
+.navbar-toggler{
+    color: white;
+}
 footer{
     padding-top: 10px;
     background-color: black;
