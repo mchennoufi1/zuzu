@@ -26,3 +26,8 @@
 </nav>
 <span class=""><img src="img/sushi-banner.jpg" alt="code"
 width="100%" height="200px" style="object-fit: cover;"></span>
+<?php
+date_default_timezone_set('Asia/Istanbul');
+$date = date(' h:i');
+echo "Bezorgtijd is $date uur";
+?>
