@@ -14,12 +14,6 @@
                 <li class="nav-item">
                     <a class="nav-link" style="<?php if($page == 'klant'){echo "color: grey";}?>" href="klant.php">Klantgegevens</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" style="<?php if($page == "sushi"){echo "color: grey";}?>" href="sushi.php">Sushi</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" style="<?php if($page == 'overzicht'){echo "color: grey";}?>" href="contact.php">Contact</a>
-                </li>
             </ul>
         </div>
     </div>

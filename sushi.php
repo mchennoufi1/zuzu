@@ -10,46 +10,58 @@
         <form class="klant" method="post" action="">
             <h3>Sushi's bestellen</h3>
             <label>Maki komkommer (max = 5)</label><br>
-            <input type="text" name="fnaam">
+            <input type="text" name="maki">
             <br>
             <label>Maki avocado (max = 10)</label><br>
-            <input type="text" name="lnaam">
+            <input type="text" name="makiA">
             <br>
             <label>Nigira zalm (max = 10)</label><br>
-            <input type="text" name="address">
+            <input type="text" name="nigira">
             <br>
             <label>Philadelphia Roll (max = 5)</label><br>
-            <input type="text" name="city">
+            <input type="text" name="phil">
             <br>
             <label>Spicy Tuna Roll (max = 5)</label><br>
-            <input type="text" name="zipcode">
+            <input type="text" name="tuna">
             <br>
             <label>California Roll (max = 8)</label><br>
-            <input type="text" name="zipcode">
+            <input type="text" name="cal">
             <br>
             <btn><input type="submit" name="verzenden" value="Verzenden"></btn>
         </form>
         <?php
-        $db = new PDO("mysql:host=localhost;dbname=zuzu"
-        ,"root"); 
             if(isset($_POST['verzenden'])){
-                $fnaam = $_POST['fnaam'];
-                $lnaam = $_POST['lnaam'];
-                $address = $_POST['address'];
-                $city = $_POST['city'];
-                $zipcode = $_POST['zipcode'];
-                $query = $db->prepare("INSERT INTO customer(fnaam,lnaam, 
-                address, city, zipcode)
-                VALUES('$fnaam', '$lnaam'. '$address', '$city', '$zipcode')");
-                $query->bindParam("fnaam", $fnaam);
-                $query->bindParam("lnaam", $lnaam);
-                $query->bindParam("address", $address);
-                $query->bindParam("city", $city);
-                $query->bindParam("zipcode", $zipcode);
-                if($query->execute()){
-                    echo "goed";
-                } else{
-                    echo "Er is iets misgegaan";
+                if($_POST['maki'] == NULL && $_POST['makiA'] == NULL &&
+                    $_POST['nigira'] == NULL && $_POST['phil'] == NULL &&
+                    $_POST['tuna'] == NULL && $_POST['cal'] == NULL){
+                    echo "Er is niet alles ingevuld";
+                }else {
+                    session_start();
+                    $maki = $_POST['maki'];
+                    $makiA = $_POST['makiA'];
+                    $nigira = $_POST['nigira'];
+                    $phil = $_POST['phil'];
+                    $tuna = $_POST['tuna'];
+                    $cal = $_POST['cal'];
+                    if ($maki == !NULL) {
+                        $_SESSION['maki'] = $maki;
+                    }
+                    if ($makiA == !NULL) {
+                        $_SESSION['makiA'] = $makiA;
+                    }
+                    if ($nigira == !NULL) {
+                        $_SESSION['nigira'] = $nigira;
+                    }
+                    if ($phil == !NULL) {
+                        $_SESSION['phil'] = $phil;
+                    }
+                    if ($tuna == !NULL) {
+                        $_SESSION['tuna'] = $tuna;
+                    }
+                    if ($cal == !NULL) {
+                        $_SESSION['cal'] = $cal;
+                    }
+                    header("Location: http://localhost/zuzu/overzicht.php");
                 }
             }
             
