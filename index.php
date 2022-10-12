@@ -17,12 +17,8 @@
                 <p class="fw-bold">
                     Vandaag dinsdag 23 augustus 2022
                 </p>
-                <p class="fw-bold">
-                    Bezorgtijd vanaf nu: 18:00
-                </p>
             </div>
             <div class="row">
-
             <div class="card col-md-6">
                 <a href="klant.php">
                 <div class="card-body">
