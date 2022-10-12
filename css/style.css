@@ -5,17 +5,17 @@ body {
 .contact{
     list-style-type: none;
 }
-.navbar {
-    margin-bottom: 0;
-    background-color: black;
-    color: white;
-}
-.navbar a{
-    color: white;
-}
 .pull-right img-thumbnail {
     margin-top: -10px;
     margin-bottom: 10px;
+}
+nav{
+    background-color: black;
+    color: white;
+}
+.nav-link-light{
+    color: white;
+    margin: 10px;
 }
 
 .header-row {
@@ -54,9 +54,6 @@ body {
     padding: 4px;
     border-radius: 5px;
     background-color: black;
-    color: white;
-}
-.navbar-toggler{
     color: white;
 }
 footer{

@@ -1,4 +1,4 @@
-<footer >
+<footer>
     <div class="row">
         <div class="contact col-md-6">
             <ul class="contact">
@@ -24,3 +24,8 @@
         </div>
     </div>
 </footer>
+<script src="js/index.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/jquery-3.5.1.min.js"></script>
+<script src="js/mdb.min.js"></script>
+<script src="js/bootstrap.bundle.js"></script>
