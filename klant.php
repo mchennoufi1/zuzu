@@ -34,6 +34,8 @@
     </div>
     <?php
     try{
+        $db = new PDO("mysql:host=localhost;dbname=zuzu"
+            ,"root");
         if(isset($_POST['verzenden'])) {
             function validate_input($input) {
                 $input = trim($input);
@@ -75,6 +77,17 @@
                         } else {
                             $address = validate_input($_POST["address"]);
                             $_SESSION['address'] = $address;
+                            $query = $db->prepare("INSERT INTO klant (fname, lname, email, address)
+                            VALUES('$_POST[fname]','$_POST[lname]','$_POST[email]', '$_POST[address]')");
+                            if($query->execute()){
+                                echo "<br>";
+                                $last_id = $db->insert_id;
+                                echo "New record created successfully. Last inserted ID is: " . $last_id;
+                                echo "De nieuwe gegevens zijn toegevoegd.";
+                                echo "<br>";
+                            } else{
+                                echo "Er is een fout opgetreden.";
+                            }
                         }
                     }
                 }

@@ -31,6 +31,8 @@
         </form>
         <?php
             if(isset($_POST['verzenden'])){
+                $db = new PDO("mysql:host=localhost;dbname=zuzu"
+                    ,"root");
                 if($_POST['maki'] == NULL && $_POST['makiA'] == NULL &&
                     $_POST['nigira'] == NULL && $_POST['phil'] == NULL &&
                     $_POST['tuna'] == NULL && $_POST['cal'] == NULL){
@@ -45,23 +47,96 @@
                     $cal = $_POST['cal'];
                     if ($maki == !NULL) {
                         $_SESSION['maki'] = $maki;
+                        $_SESSION['name'] = "maki";
+                        $query = $db->prepare("INSERT INTO sushi (name, amount)
+                    VALUES('$_SESSION[name]','$_SESSION[maki]')");
+                        if($query->execute()){
+                            echo "<br>";
+                            echo "De nieuwe gegevens zijn toegevoegd.";
+                            echo "<br>";
+                            $_SESSION['id'] = $last_id;
+                        } else{
+                            echo "Er is een fout opgetreden.";
+                        }
                     }
                     if ($makiA == !NULL) {
                         $_SESSION['makiA'] = $makiA;
+                        $_SESSION['name'] = "makiA";
+                        $query = $db->prepare("INSERT INTO sushi (name, amount)
+                    VALUES('$_SESSION[name]','$_SESSION[makiA]')");
+                        if($query->execute()){
+                            echo "<br>";
+                            echo "De nieuwe gegevens zijn toegevoegd.";
+                            echo "<br>";
+                            $_SESSION['id'] = $last_id;
+                        } else{
+                            echo "Er is een fout opgetreden.";
+                        }
                     }
                     if ($nigira == !NULL) {
                         $_SESSION['nigira'] = $nigira;
+                        $_SESSION['name'] = "nigira";
+                        $query = $db->prepare("INSERT INTO sushi (name, amount)
+                    VALUES('$_SESSION[name]','$_SESSION[nigira]')");
+                        if($query->execute()){
+                            echo "<br>";
+                            echo "De nieuwe gegevens zijn toegevoegd.";
+                            echo "<br>";
+                            $_SESSION['id'] = $last_id;
+                        } else{
+                            echo "Er is een fout opgetreden.";
+                        }
+
                     }
                     if ($phil == !NULL) {
                         $_SESSION['phil'] = $phil;
+                        $_SESSION['name'] = "phil";
+                        $query = $db->prepare("INSERT INTO sushi (name, amount)
+                    VALUES('$_SESSION[name]','$_SESSION[phil]')");
+                        if($query->execute()){
+                            echo "<br>";
+                            echo "De nieuwe gegevens zijn toegevoegd.";
+                            echo "<br>";
+                            $_SESSION['id'] = $last_id;
+                        } else{
+                            echo "Er is een fout opgetreden.";
+                        }
+
                     }
                     if ($tuna == !NULL) {
                         $_SESSION['tuna'] = $tuna;
+                        $_SESSION['name'] = "tuna";
+                        $query = $db->prepare("INSERT INTO sushi (name, amount)
+                    VALUES('$_SESSION[name]','$_SESSION[tuna]')");
+                        if($query->execute()){
+                            echo "<br>";
+                            echo "De nieuwe gegevens zijn toegevoegd.";
+                            echo "<br>";
+                            $_SESSION['id'] = $last_id;
+                        } else{
+                            echo "Er is een fout opgetreden.";
+                        }
+
                     }
                     if ($cal == !NULL) {
                         $_SESSION['cal'] = $cal;
+                        $_SESSION['name'] = "cal";
+                        $query = $db->prepare("INSERT INTO sushi (name, amount)
+                    VALUES('$_SESSION[name]','$_SESSION[cal]')");
+                        if($query->execute()){
+                            echo "<br>";
+                            $last_id = $db->insert_id;
+                            echo "New record created successfully. Last inserted ID is: " . $last_id;
+                            echo "De nieuwe gegevens zijn toegevoegd.";
+                            echo "<br>";
+                            $_SESSION['id'] = $last_id;
+                        } else{
+                            echo "Er is een fout opgetreden.";
+                        }
+
                     }
                     header("Location: http://localhost/zuzu/overzicht.php");
+
                 }
             }
             
