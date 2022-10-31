@@ -28,16 +28,10 @@ echo "Bezorgtijd is $date$date2 uur";
 if($normalDate < 12 && $normalDate > 6){
     echo "<br>";
     echo "Welkom! Goedemorgen!";
-} else if($normalDate > 12 && $normalDate < 18){
+} else if($normalDate > 0 && $normalDate < 6){
     echo "<br>";
     echo "Welkom! Goedemiddag!";
-} else if($normalDate < 24 && $normalDate > 18){
-    echo "<br>";
-    echo "Welkom! Goedenavond!";
-} else if($normalDate > 00 && $normalDate < 6){
-    echo "<br>";
-    echo "Welkom! Goedenacht!";
-}else{
+} else{
     echo "<br>";
     echo "Er is iets foutgegaan.";
 }

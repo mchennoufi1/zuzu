@@ -31,7 +31,7 @@
                 </a>
             </div>
             <div class="card col-md-6">
-                <a href="sushi.php">
+                <a href="klant.php">
                 <div class="card-body">
                     <img src="img/sushi2.jpg" alt="code"
                          width="100%" height="200px" style="object-fit: cover;">

@@ -10,22 +10,25 @@
         <form class="klant" method="post" action="">
             <h3>Sushi's bestellen</h3>
             <label>Maki komkommer (max = 5)</label><br>
-            <input type="text" name="maki">
+            <input type="radio" name="sushi" value="1">
             <br>
             <label>Maki avocado (max = 10)</label><br>
-            <input type="text" name="makiA">
+            <input type="radio" name="sushi" value="2">
             <br>
             <label>Nigira zalm (max = 10)</label><br>
-            <input type="text" name="nigira">
+            <input type="radio" name="sushi" value="3">
             <br>
             <label>Philadelphia Roll (max = 5)</label><br>
-            <input type="text" name="phil">
+            <input type="radio" name="sushi" value="4">
             <br>
             <label>Spicy Tuna Roll (max = 5)</label><br>
-            <input type="text" name="tuna">
+            <input type="radio" name="sushi" value="5">
             <br>
             <label>California Roll (max = 8)</label><br>
-            <input type="text" name="cal">
+            <input type="radio" name="sushi" value="6">
+            <br>
+            <label>Amount</label><br>
+            <input type="text" name="amount">
             <br>
             <btn><input type="submit" name="verzenden" value="Verzenden"></btn>
         </form>
@@ -33,112 +36,27 @@
             if(isset($_POST['verzenden'])){
                 $db = new PDO("mysql:host=localhost;dbname=zuzu"
                     ,"root");
-                if($_POST['maki'] == NULL && $_POST['makiA'] == NULL &&
-                    $_POST['nigira'] == NULL && $_POST['phil'] == NULL &&
-                    $_POST['tuna'] == NULL && $_POST['cal'] == NULL){
+                if($_POST['sushi'] == NULL && $_POST['amount'] == NULL){
                     echo "Er is niet alles ingevuld";
                 }else {
                     session_start();
-                    $maki = $_POST['maki'];
-                    $makiA = $_POST['makiA'];
-                    $nigira = $_POST['nigira'];
-                    $phil = $_POST['phil'];
-                    $tuna = $_POST['tuna'];
-                    $cal = $_POST['cal'];
-                    if ($maki == !NULL) {
-                        $_SESSION['maki'] = $maki;
-                        $_SESSION['name'] = "maki";
-                        $query = $db->prepare("INSERT INTO sushi (name, amount)
-                    VALUES('$_SESSION[name]','$_SESSION[maki]')");
-                        if($query->execute()){
-                            echo "<br>";
-                            echo "De nieuwe gegevens zijn toegevoegd.";
-                            echo "<br>";
-                            $_SESSION['id'] = $last_id;
-                        } else{
-                            echo "Er is een fout opgetreden.";
-                        }
+                    $sushi = $_POST['sushi'];
+                    $amount = $_POST['amount'];
+                    $_SESSION['amount'] = $amount;
+                    switch ($sushi){
+                        case "1": $_SESSION['sushi'] = "Maki komkommer"; break;
+                        case "2": $_SESSION['sushi'] = "Maki avocado"; break;
+                        case "3": $_SESSION['sushi'] = "Nigira"; break;
+                        case "4": $_SESSION['sushi'] = "Philadelphia Roll"; break;
+                        case "5": $_SESSION['sushi'] = "Spicy tuna roll"; break;
+                        case "6": $_SESSION['sushi'] = "California roll"; break;
+                        default: echo "Er is geen mogelijkheid ingevuld"; break;
                     }
-                    if ($makiA == !NULL) {
-                        $_SESSION['makiA'] = $makiA;
-                        $_SESSION['name'] = "makiA";
-                        $query = $db->prepare("INSERT INTO sushi (name, amount)
-                    VALUES('$_SESSION[name]','$_SESSION[makiA]')");
-                        if($query->execute()){
-                            echo "<br>";
-                            echo "De nieuwe gegevens zijn toegevoegd.";
-                            echo "<br>";
-                            $_SESSION['id'] = $last_id;
-                        } else{
-                            echo "Er is een fout opgetreden.";
-                        }
-                    }
-                    if ($nigira == !NULL) {
-                        $_SESSION['nigira'] = $nigira;
-                        $_SESSION['name'] = "nigira";
-                        $query = $db->prepare("INSERT INTO sushi (name, amount)
-                    VALUES('$_SESSION[name]','$_SESSION[nigira]')");
-                        if($query->execute()){
-                            echo "<br>";
-                            echo "De nieuwe gegevens zijn toegevoegd.";
-                            echo "<br>";
-                            $_SESSION['id'] = $last_id;
-                        } else{
-                            echo "Er is een fout opgetreden.";
-                        }
-
-                    }
-                    if ($phil == !NULL) {
-                        $_SESSION['phil'] = $phil;
-                        $_SESSION['name'] = "phil";
-                        $query = $db->prepare("INSERT INTO sushi (name, amount)
-                    VALUES('$_SESSION[name]','$_SESSION[phil]')");
-                        if($query->execute()){
-                            echo "<br>";
-                            echo "De nieuwe gegevens zijn toegevoegd.";
-                            echo "<br>";
-                            $_SESSION['id'] = $last_id;
-                        } else{
-                            echo "Er is een fout opgetreden.";
-                        }
-
-                    }
-                    if ($tuna == !NULL) {
-                        $_SESSION['tuna'] = $tuna;
-                        $_SESSION['name'] = "tuna";
-                        $query = $db->prepare("INSERT INTO sushi (name, amount)
-                    VALUES('$_SESSION[name]','$_SESSION[tuna]')");
-                        if($query->execute()){
-                            echo "<br>";
-                            echo "De nieuwe gegevens zijn toegevoegd.";
-                            echo "<br>";
-                            $_SESSION['id'] = $last_id;
-                        } else{
-                            echo "Er is een fout opgetreden.";
-                        }
-
-                    }
-                    if ($cal == !NULL) {
-                        $_SESSION['cal'] = $cal;
-                        $_SESSION['name'] = "cal";
-                        $query = $db->prepare("INSERT INTO sushi (name, amount)
-                    VALUES('$_SESSION[name]','$_SESSION[cal]')");
-                        if($query->execute()){
-                            echo "<br>";
-                            $last_id = $db->insert_id;
-                            echo "New record created successfully. Last inserted ID is: " . $last_id;
-                            echo "De nieuwe gegevens zijn toegevoegd.";
-                            echo "<br>";
-                            $_SESSION['id'] = $last_id;
-                        } else{
-                            echo "Er is een fout opgetreden.";
-                        }
-
-                    }
+                    
                     header("Location: http://localhost/zuzu/overzicht.php");
-
                 }
-            }
+                }
+            
             
             ?>
         <br>
